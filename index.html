@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erick Ricardo Sóstenes González - Portafolio Personal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #3498db, #2ecc71, #e74c3c);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        nav {
+            background-color: #34495e;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #ecf0f1;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 1s ease;
+            position: relative;
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #3498db;
+            transition: width 1s ease;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        nav ul li a:hover {
+            background-color: #2c3e50;
+            transform: translateY(-3px);
+        }
+        section {
+            background-color: #fff;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        section:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .project {
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            transition: box-shadow 0.3s ease;
+        }
+        .project:hover {
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            margin-top: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            nav ul.show {
+                display: flex;
+            }
+            nav ul li {
+                margin: 0.5rem 0;
+                width: 100%;
+                text-align: center;
+            }
+            nav ul li a {
+                display: block;
+                padding: 0.7rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Erick Ricardo Sóstenes González</h1>
+            <p>Ingeniero en Sistemas Computacionales | Desarrollador | Entusiasta de Fintech</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container nav-container">
+            <button class="menu-toggle" aria-label="Menú de navegación">☰</button>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#acerca-de">Acerca de</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#reconocimientos">Reconocimientos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="inicio">
+            <h2>Bienvenido a mi Portafolio Personal</h2>
+            <p>Soy un estudiante apasionado por el desarrollo de software, finanzas, trading, ciberseguridad y dropshipping. Mi objetivo es aplicar mis habilidades en programación y análisis de sistemas para contribuir al éxito de empresas fintech o plataformas de comercio electrónico que valoren la innovación y la seguridad digital.</p>
+            <img src="foto.jpg" alt="Foto de Erick Ricardo Sóstenes González" style="max-width: 300px; border-radius: 50%; display: block; margin: 2rem auto;">
+            <a href="#proyectos" class="btn">Ver proyectos</a>
+        </section>
+
+        <section id="acerca-de">
+            <h2>Acerca de mí</h2>
+            <p>Actualmente curso el tercer año de Ingeniería en Sistemas Computacionales en la Universidad Politécnica de Tulancingo. Me destaco por mi capacidad de liderazgo, resolución de problemas y aprendizaje continuo.</p>
+            <h3>Formación académica y certificaciones</h3>
+            <ul>
+                <li>Ingeniería en Sistemas Computacionales (en curso) - Universidad Politécnica de Tulancingo</li>
+                <li>Certificación en lenguaje de programación R</li>
+                <li>Certificación en programación estructurada</li>
+                <li>Certificaciones CISCO en redes (Introducción a redes, Switching, Routing y dispositivos esenciales, Interconexión de redes)</li>
+                <li>Certificación de Google Activate en desarrollo de aplicaciones móviles</li>
+                <li>Certificaciones en administración de bases de datos (SOLOLEARN y Aprende)</li>
+            </ul>
+            <h3>Competencias</h3>
+            <ul>
+                <li>Lenguajes de programación: Java, JavaScript, PHP, Python, Bash, C#, Dart y Flutter</li>
+                <li>Programas: Ubuntu, Virtual Box, Shopify y MetaTrader</li>
+                <li>Habilidades blandas: Trabajo en equipo, liderazgo, resolución de problemas, gestión de tiempo, administración de recursos, negociación, empatía y aprendizaje continuo</li>
+                <li>Idiomas: Inglés - nivel intermedio (B1)</li>
+            </ul>
+            <h3>Intereses personales</h3>
+            <p>Fuera del ámbito profesional, asisto al gimnasio entre 4-5 días a la semana. También soy músico aficionado, tocando el bajo, la guitarra y sintetizadores digitales. Disfruto cantar y realizar música o covers combinando estas habilidades.</p>
+        </section>
+
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+            <div class="project">
+                <h3>Sistema de Reinscripción para CBTis 179</h3>
+                <p>Desarrollé junto a un equipo un sistema de reinscripción utilizando JS, PHP y MySQL. Desempeñé roles de scrum master y desarrollador. El sistema mejoró la eficiencia de reinscripción en un 50%.</p>
+                <p><strong>Duración:</strong> 3 meses (01/11/2021 – 01/02/2022)</p>
+                <p><strong>Impacto:</strong> Implementado en la página oficial de la institución</p>
+                <br>
+                <img src="cbtis1.png" alt="Foto 1">
+                <img src="cbtis2.png" alt="Foto 2">
+                <img src="cbtis3.png" alt="Foto 3">
+            </div>
+            <div class="project">
+                <h3>Investigación en Espectroscopia Biomédica</h3>
+                <p>Realicé una investigación utilizando BWSpec, Exemplar y fuentes de luz halógena durante mi estancia en la UPT.</p>
+                <br>
+                <img src="estan.png" alt="electroscopia 1">
+            </div>
+            <div class="project">
+                <h3>Sistemas de Ventas para Restaurantes</h3>
+                <p>Desarrollé sistemas CRUD para negocios, empleando tecnologías como JS, C#, CSS, HTML, SQL Server y MySQL.</p>
+                <br>
+                <img src="res1.jpg" alt="restaurante 1" width="200">
+                <img src="res2.jpg" alt="restaurante 2" width="200">
+            </div>
+            <div class="project">
+                <h3>Comercialización de Ropa en Línea</h3>
+                <p>Proyecto personal en desarrollo para la venta de ropa en línea y en físico, incluye un sistema gestor.</p>
+            </div>
+        </section>
+
+        <section id="servicios">
+            <h2>Servicios</h2>
+            <ul>
+                <li>Desarrollo de aplicaciones web y móviles</li>
+                <li>Diseño y administración de bases de datos</li>
+                <li>Consultoría en ciberseguridad</li>
+                <li>Asesoría en comercio electrónico y dropshipping</li>
+                <li>Desarrollo de sistemas de gestión empresarial</li>
+                <li>Análisis y optimización de sistemas</li>
+            </ul>
+        </section>
+
+        <section id="reconocimientos">
+            <h2>Reconocimientos</h2>
+            <ul>
+                <li>Reconocimiento de mejores promedios dentro de las ingenierías con un total de 9.9/10</li>
+                <li>Múltiples certificaciones en programación, redes y desarrollo móvil</li>
+            </ul>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Correo: erickrsg2004@gmail.com</p>
+            <p>Teléfono: +52 775 105 5765</p>
+            <p>Dirección: Calle ocote, #238 Tulancingo de Bravo, Hidalgo 43629</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/erick-ricardo-sóstenes-gonzález-31a410287" target="_blank">Perfil de LinkedIn</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Erick Ricardo Sóstenes González. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function smoothScroll(target) {
+            const element = document.querySelector(target);
+            window.scrollTo({
+                top: element.offsetTop - 70,
+                behavior: 'smooth'
+            });
+        }
+
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                smoothScroll(this.getAttribute('href'));
+                if (window.innerWidth <= 768) {
+                    document.querySelector('nav ul').classList.remove('show');
+                }
+            });
+        });
+
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                document.querySelector('nav ul').classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
